@@ -1,0 +1,7 @@
+name: Infrastructure
+runtime: dotnet
+description: A minimal C# Pulumi program
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: csharp

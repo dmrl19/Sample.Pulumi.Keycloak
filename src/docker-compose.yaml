@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+    keycloak:
+        image: quay.io/keycloak/keycloak:25.0.4
+        environment:
+          - KEYCLOAK_ADMIN=admin
+          - KEYCLOAK_ADMIN_PASSWORD=admin
+        ports:
+          - "8080:8080"
+        command: start-dev 
+        container_name: keycloak-sample
+    smtp-server:
+        image: rnwood/smtp4dev
+        container_name: smtp-server-sample
+        ports:
+          - "2000:80"
+          - "2525:25"
+
+# docker-compose -f docker-compose.yaml up -d
+# docker-compose -f docker-compose.yaml down
